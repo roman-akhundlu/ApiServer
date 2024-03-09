@@ -1,0 +1,8 @@
+.card-img-top {
+    display: block;
+    height: 70px;
+    width: 100px;
+    margin: 20px auto;
+    object-fit: contain;
+}
+
