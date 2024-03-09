@@ -53,22 +53,15 @@ async function melumatlar() {
 window.addEventListener("DOMContentLoaded", melumatlar)
 
 
-//AI Made
-const toggleFullText = (elementId) => {
-    const element = document.getElementById(elementId);
-    const fullText = element.textContent;
-    const truncatedText = fullText.slice(0, 100) + '...';
-    if (element.classList.contains('full-text')) {
-      element.textContent = truncatedText;
-      element.classList.remove('full-text');
-    } else {
-      element.textContent = fullText;
-      element.classList.add('full-text');
+const truncateText = () => {
+    const productDescriptions = document.getElementsByClassName('card-text');
+    for (let i = 0; i < productDescriptions.length; i++) {
+      const productDescription = productDescriptions[i];
+      const fullText = productDescription.textContent;
+      const truncatedText = fullText.slice(0, 100) + '...';
+      productDescription.textContent = truncatedText;
     }
   };
   
-  // Call the toggleFullText function for each product description
-  for(let i = 0; i < mehsullar.length; i++) {
-    const productDescription = document.getElementById(`product-description-${i}`);
-    productDescription.addEventListener('click', () => toggleFullText(productDescription.id));
-  }
+  // Call the truncateText function
+  truncateText();
