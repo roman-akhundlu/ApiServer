@@ -28,10 +28,10 @@ async function melumatlar() {
             Roman.innerHTML += `<div class="col-12 col-md-6 col-lg-3">
             <div class="card my-2" style="width: 18rem;">
               <img src="${mehsullar[i].image}" class="card-img-top" alt="...">
-              <div class="card-body">
+              <div class="card-body d-flex flex-column justify-content-evenly">
                 <h5 class="card-title">${mehsullar[i].title}</h5>
-                <p class="card-text">${mehsullar[i].description}.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <p class="card-text">${mehsullar[i].description.slice(0,40)}...</p>
+                <a href="#" class="btn btn-primary">Read More</a>
               </div>
             </div>
             </div> `
@@ -65,3 +65,17 @@ const truncateText = () => {
   
   // Call the truncateText function
   truncateText();
+
+
+
+  const overlaymenu = document.querySelector(".overlay-menu")
+
+  const hamberger = document.querySelector(".navbar-toggler-icon")
+
+  hamberger.addEventListener( "click", menyunuac)
+
+  function menyunuac() {
+    overlaymenu.classList.add( "aktiv" )
+  }
+
+  
